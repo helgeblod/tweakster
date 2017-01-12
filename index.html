@@ -156,7 +156,7 @@
                 <div class="row">
                     <h2>Kjønn</h2>
                     <div class="col-lg-1" style="margin-top:10px;">
-                    Kvinner 
+                    Kvinner
                     </div>
                     <div class="col-lg-6" style="margin-top:10px;margin-left:20px;">
                     <input style="width: 185px;" oninput="updateHvor(hvor.value)" id="kjonnId" type="range" min="0" max="6" value="3" name="kjonn" />
@@ -165,7 +165,7 @@
                     Menn
                     </div>
 
-                  
+
                 </div>
 
                 <div class="row">
@@ -266,8 +266,8 @@
                   <div class="panel-body" style="background-color: #fcfcfc">
                     <h2>Du treffer</h2>
                     <img src="images/du_treffer/1.svg" style="width: auto;height: 30px;">
-                    <div id="nedslagsfelt" class="odometer">153456</div>
-                    <div id="nedslagsfeltValue" style="display:none">153456</div>
+                    <div id="nedslagsfelt" class="odometer">18657</div>
+                    <div id="nedslagsfeltValue" style="display:none">18657</div>
                     lesere
 
 
@@ -277,20 +277,20 @@
                     <h2>Aldersfordeling</h2>
                     <h2>Pris:</h2>
                     <div class="price">
-                    <h3 class="text-right" style="margin-top:-40px;font-weight: 700">18500 Totalt</h3>
+                        <h3 class="text-right" style="margin-top:-40px;font-weight: 700"><span id="totalPriceId">3731</span> Totalt</h3>
                     <table class="table text-center">
                       <tr>
                         <td>
-                          <div class="perViewer" style="font-weight: 700">1,50</div><div>per leser</div>
+                            <div class="perViewer" style="font-weight: 700"><span id="perReaderId">0,20</span></div><div>per leser</div>
                         </td>
                         <td>
-                          <div class="viewersPaper" style="font-weight: 700">20000</div><div>lesere papir</div>
+                            <div id="readersPaper" class="viewersPaper" style="font-weight: 700">11194</div><div>lesere papir</div>
                         </td>
                         <td>
-                          <div class="viewersDigital" style="font-weight: 700">7500</div><div>lesere digitalt</div>
+                            <div id="readersDigital" class="viewersDigital" style="font-weight: 700">7463</div><div>lesere digitalt</div>
                         </td>
                       </tr>
-                    </table>  
+                    </table>
                   </div>
                 </div>
                 <div class="panel-footer">
@@ -312,6 +312,9 @@
         <script>
 
          function updateValues(value){
+             document.getElementById("readersDigital").innerHTML = Math.round(value*0.4);
+             document.getElementById("readersPaper").innerHTML = Math.round(value*0.6);
+             document.getElementById("totalPriceId").innerHTML = Math.round(value * 0.2);
              document.getElementById("nedslagsfeltValue").innerHTML = Math.round(value );
              document.getElementById("nedslagsfelt").innerHTML = Math.round(value);
          }
@@ -321,19 +324,19 @@
              var sted = "";
              if(num === "1"){
                  sted = "Tønsberg";
-                 document.getElementById("percentageId").innerHTML = "53";
+                 document.getElementById("percentageId").innerHTML = "65";
              }
              if(num === "2"){
                  sted = "Vestfold";
-                 document.getElementById("percentageId").innerHTML = "67";
+                 document.getElementById("percentageId").innerHTML = "73";
 
              }
              if(num === "3"){
-                 document.getElementById("percentageId").innerHTML = "73";
+                 document.getElementById("percentageId").innerHTML = "33";
                  sted = "Hele Norge";
              }
 
-             updateValues( num * 153456 )
+             updateValues(num * num * num * 18657 )
              document.getElementById("hvorTxtId").innerHTML = sted;
              document.getElementById("hvorTxtKvitteringId").innerHTML = sted;
          }
