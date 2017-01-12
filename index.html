@@ -24,6 +24,8 @@
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -154,11 +156,11 @@
 
                 <div class="row">
                     <h2>Interesser</h2>
-                    <button type="button" class="btn btn-sm btn-primary">Sport</button>
-                    <button type="button" class="btn btn-sm btn-primary">Politikk</button>
-                    <button type="button" class="btn btn-sm btn-primary">Musikk/Film</button>
-                    <button type="button" class="btn btn-sm btn-primary">Mote</button>
-                    <button type="button" class="btn btn-sm btn-primary">IT</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Sport</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Politikk</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Musikk/Film</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Mote</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">IT</button>
                 </div>
             </div>
 
@@ -247,11 +249,10 @@
                     <img src="images/du_treffer/1.svg" style="width: auto;height: 30px;">
                     <div id="nedslagsfelt" class="odometer">153456</div>
                     <div id="nedslagsfeltValue" style="display:none">153456</div>
+                    lesere
 
 
-
-                    <h2>67% av alle </h2>
-
+                    <div><span id="percentageId">67</span>% av alle i <span id="hvorTxtKvitteringId">Tønsberg</span></div>
                     <h2>Kjønnsfordeling</h2>
 
                     <h2>Aldersfordeling</h2>
@@ -289,16 +290,21 @@
              var sted = "";
              if(num === "1"){
                  sted = "Tønsberg";
+                 document.getElementById("percentageId").innerHTML = "53";
              }
              if(num === "2"){
                  sted = "Vestfold";
+                 document.getElementById("percentageId").innerHTML = "67";
+
              }
              if(num === "3"){
+                 document.getElementById("percentageId").innerHTML = "73";
                  sted = "Hele Norge";
              }
 
              updateValues( num * 153456 )
              document.getElementById("hvorTxtId").innerHTML = sted;
+             document.getElementById("hvorTxtKvitteringId").innerHTML = sted;
          }
 
 
