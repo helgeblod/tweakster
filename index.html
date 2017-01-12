@@ -35,16 +35,13 @@
         <img width="100%" src="images/tb_topp.png">
 
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div>
-                        <h2>Hvor?&nbsp;</h2>
-                        <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="hvor" />
-                    </div>
-                </div>
-            </div>
-
             <div class="col-lg-4">
+
+                <div class="row">
+                    <h2>Hvor?&nbsp;</h2>
+                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="hvor" />
+                </div>
+
                 <div class="row">
                     <h2>Dato</h2><div>Automatisk (anbefalt)</div>
                 </div>
@@ -60,7 +57,7 @@
 
                 <div class="row">
                     <h2>Kjønn</h2>
-                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="kjonn" />
+                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="kjonnId" type="range" min="0" max="6" value="3" name="kjonn" />
                 </div>
 
                 <div class="row">
@@ -77,7 +74,7 @@
             <div class="col-lg-4">
                 <div class="row">
                     <h2>Avisformat</h2>
-                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" name="avisformat" />
+                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" value="3" name="avisformat" />
 
                         <div class="printformater" id="p1" margin-right="5px" style="display:none">
                             <img width="15%"  src="images/Printformater/liten.svg">
@@ -88,7 +85,7 @@
                         <div class="printformater" id="p3" margin-right="5px">
                             <img width="15%" margin-right="4px" src="images/Printformater/stor.svg">
                         </div>
-                        <div class="printformater" id="p4" >
+                        <div class="printformater" id="p4" style="display:none">
                             <img width="15%" margin-right="4px" src="images/Printformater/størst.svg">
                         </div>
                 </div>
@@ -106,17 +103,18 @@
                 <div class="row">
 
                     <h2>Størrelse digitalt</h2>
+                    <input style="width: 200px;" oninput="changeDigitalFormat(digitalFormatId.value);" id="digitalFormatId" type="range" min="1" max="4" value="2" name="digitalformat" />
 
-                      <div class="digitalformater" id="d1" margin-right="5px">
+                      <div class="digitalformater" id="d1" margin-right="5px" style="display:none">
                             <img width="15%"  src="images/Digitalformater/liten.svg">
                         </div>
                         <div class="digitalformater" id="d2" margin-right="5px">
                             <img width="15%" margin-right="4px" src="images/Digitalformater/middels.svg">
                         </div>
-                        <div class="digitalformater" id="d3" margin-right="5px">
+                        <div class="digitalformater" id="d3" margin-right="5px" style="display:none">
                             <img width="15%" margin-right="4px" src="images/Digitalformater/stor.svg">
                         </div>
-                        <div class="digitalformater" id="d4" >
+                        <div class="digitalformater" id="d4" style="display:none">
                             <img width="15%" margin-right="4px" src="images/Digitalformater/størst.svg">
                         </div>
                 </div>
@@ -150,10 +148,6 @@
             </div>
 
 
-            <!-- Site footer -->
-            <footer class="footer">
-                <p>&copy; 2017 Amedia Salg og Marked.</p>
-            </footer>
 
         </div> <!-- /container -->
 
@@ -179,6 +173,19 @@
              console.log("p"+format)
              document.getElementById("p"+format).style = ""
          }
+
+         function changeDigitalFormat(format) {
+             var myClasses = document.querySelectorAll('.digitalformater'),
+                 i = 0,
+                 l = myClasses.length;
+
+             for (i; i < l; i++) {
+                 myClasses[i].style.display = 'none';
+             }
+             document.getElementById("d"+format).style = ""
+         }
+
+
         </script>
 
     </body>
