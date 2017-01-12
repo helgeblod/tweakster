@@ -74,50 +74,63 @@
 
             <div class="col-lg-4">
                 <div class="row">
-                    <h2>Avisformat</h2>
-                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" value="3" name="avisformat" />
+                	<div class="col-lg-3">
 
-                        <div class="printformater" id="p1" margin-right="5px" style="display:none">
-                            <img width="15%"  src="images/Printformater/liten.svg">
-                        </div>
-                        <div class="printformater" id="p2" margin-right="5px" style="display:none">
-                            <img width="15%" margin-right="4px" src="images/Printformater/middels.svg">
-                        </div>
-                        <div class="printformater" id="p3" margin-right="5px">
-                            <img width="15%" margin-right="4px" src="images/Printformater/stor.svg">
-                        </div>
-                        <div class="printformater" id="p4" style="display:none">
-                            <img width="15%" margin-right="4px" src="images/Printformater/størst.svg">
-                        </div>
+						  <div class="printformater" id="p1" style="display:none">
+	                            <img width="100%"  src="images/Printformater/liten.svg">
+	                        </div>
+	                        <div class="printformater" id="p2" style="display:none">
+	                            <img width="100%" margin-right="4px" src="images/Printformater/middels.svg">
+	                        </div>
+	                        <div class="printformater" id="p3" >
+	                            <img width="100%" margin-right="4px" src="images/Printformater/stor.svg">
+	                        </div>
+	                        <div class="printformater" id="p4" style="display:none">
+	                            <img width="100%" margin-right="4px" src="images/Printformater/størst.svg">
+	                        </div>
+                	</div>
+	                	<div class="col-lg-9">
+	                    <h2>Avisformat</h2>
+	                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" value="3" name="avisformat" />
+                	</div>            
                 </div>
 
                 <div class="row">
-                    <h2>Dager</h2>
-                    <div>
-                    <input id="daysInputRangeId" style="width: 200px;" oninput="daysOutputId.value = daysInputRangeId.value" id="slider" type="range" min="1" max="30" name="dager" value="3" />
-                    <output name="daysOutputText" id="daysOutputId">3</output>
-                    </div>
-                </div>
 
-
-
-                <div class="row">
-
-                    <h2>Størrelse digitalt</h2>
-                    <input style="width: 200px;" oninput="changeDigitalFormat(digitalFormatId.value);" id="digitalFormatId" type="range" min="1" max="4" value="2" name="digitalformat" />
-
+                	<div class="col-lg-3">
                       <div class="digitalformater" id="d1" margin-right="5px" style="display:none">
-                            <img width="15%"  src="images/Digitalformater/liten.svg">
+                            <img width="100%"  src="images/Digitalformater/liten.svg">
                         </div>
                         <div class="digitalformater" id="d2" margin-right="5px">
-                            <img width="15%" margin-right="4px" src="images/Digitalformater/middels.svg">
+                            <img width="100%" margin-right="4px" src="images/Digitalformater/middels.svg">
                         </div>
                         <div class="digitalformater" id="d3" margin-right="5px" style="display:none">
-                            <img width="15%" margin-right="4px" src="images/Digitalformater/stor.svg">
+                            <img width="100%" margin-right="4px" src="images/Digitalformater/stor.svg">
                         </div>
                         <div class="digitalformater" id="d4" style="display:none">
-                            <img width="15%" margin-right="4px" src="images/Digitalformater/størst.svg">
+                            <img width="100%" margin-right="4px" src="images/Digitalformater/størst.svg">
                         </div>
+                	</div>
+                	<div class="col-lg-9">
+	                    <h2>Størrelse digitalt</h2>
+	                    <input style="width: 200px;" oninput="changeDigitalFormat(digitalFormatId.value);" id="digitalFormatId" type="range" min="1" max="4" value="2" name="digitalformat" />
+                	</div>
+
+                <div class="row">
+                	<div class="col-lg-3">
+                		<output name="daysOutputText" id="daysOutputId">3</output>
+                	</div>
+                	<div class="col-lg-9">
+                	    <h2>Dager</h2>
+                	    <input id="daysInputRangeId" style="width: 200px;" oninput="daysOutputId.value = daysInputRangeId.value" id="slider" type="range" min="1" max="30" name="dager" value="3" />
+                    <div>
+
+                    </div>
+                	</div>
+                		
+
+                </div>
+
                 </div>
 
                 <div class="row">
