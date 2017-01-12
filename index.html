@@ -130,8 +130,8 @@
 
                 <div class="row">
                     <h2>Sted&nbsp; </h2>
-                    <div id="hvorTxtId">Vestfold</div>
-                    <input style="width: 200px;" oninput="updateHvor(hvorId.value)" id="hvorId" type="range" min="1" max="3" value="2" name="hvor" />
+                    <div id="hvorTxtId">Tønsberg</div>
+                    <input style="width: 200px;" oninput="updateHvor(hvorId.value)" id="hvorId" type="range" min="1" max="3" value="0" name="hvor" />
                 </div>
 
                 <div class="row">
@@ -183,7 +183,7 @@
 	                	<div class="col-lg-9">
 	                    <h2>Avisformat</h2>
 	                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" value="3" name="avisformat" />
-                	</div>            
+                	</div>
                 </div>
 
                 <div class="row" style="margin-top:20px">
@@ -218,7 +218,7 @@
 
                     </div>
                 	</div>
-                		
+
 
                 </div>
 
@@ -237,6 +237,10 @@
             <div class="col-lg-4" style="background-color: #eceeef;">
                 <div class="row">
                     <h2>Du treffer</h2>
+                    <img src="images/du_treffer/1.svg" style="width: auto;height: 30px;">
+                    <div id="nedslagsfelt" class="odometer">153456</div>
+                    <div id="nedslagsfeltValue" style="display:none">153456</div>
+
                 </div>
 
                 <div class="row">
@@ -263,11 +267,14 @@
 
         <script type="text/javascript" src="js/odometer.min.js"></script>
         <script>
-         function updateValues(number){
-             document.getElementById("nedslagsfelt").innerHTML = Math.round(36456 * number / 100);
+
+         function updateValues(value){
+             document.getElementById("nedslagsfeltValue").innerHTML = Math.round(value );
+             document.getElementById("nedslagsfelt").innerHTML = Math.round(value);
          }
 
          function updateHvor(num){
+
              var sted = "";
              if(num === "1"){
                  sted = "Tønsberg";
@@ -279,7 +286,7 @@
                  sted = "Hele Norge";
              }
 
-             console.log(num)
+             updateValues( num * 153456 )
              document.getElementById("hvorTxtId").innerHTML = sted;
          }
 
@@ -292,7 +299,7 @@
              for (i; i < l; i++) {
                  myClasses[i].style.display = 'none';
              }
-             console.log("p"+format)
+
              document.getElementById("p"+format).style = ""
          }
 
@@ -306,7 +313,6 @@
              }
              document.getElementById("d"+format).style = ""
          }
-
 
         </script>
 
