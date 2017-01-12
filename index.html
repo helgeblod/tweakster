@@ -67,7 +67,6 @@
                     <button type="button" class="btn btn-primary">Musikk/Film</button>
                     <button type="button" class="btn btn-primary">Mote</button>
                     <button type="button" class="btn btn-primary">IT</button>
-
                 </div>
             </div>
 
@@ -75,10 +74,15 @@
             <div class="col-lg-4">
                 <div class="row">
                     <h2>Avisformat</h2>
+                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="4" name="avisformat" />
                 </div>
 
                 <div class="row">
                     <h2>Dager</h2>
+                    <div>
+                    <input id="daysInputRangeId" style="width: 200px;" oninput="daysOutputId.value = daysInputRangeId.value" id="slider" type="range" min="1" max="30" name="dager" value="3" />
+                    <output name="daysOutputText" id="daysOutputId">3</output>
+                    </div>
                 </div>
 
 
@@ -88,6 +92,11 @@
 
                 <div class="row">
                     <h2>Antall visninger</h2>
+                    <div>
+                        <input id="viewsInputRangeId" style="width: 200px;" oninput="viewsOutputId.value = viewsInputRangeId.value" id="slider" type="range" min="100" max="50000" name="views" value="1000" />
+                        <output name="viewsOutputText" id="viewsOutputId">1000</output>
+                    </div>
+
                 </div>
             </div>
 
