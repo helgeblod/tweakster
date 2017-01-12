@@ -38,8 +38,9 @@
             <div class="col-lg-4">
 
                 <div class="row">
-                    <h2>Hvor?&nbsp;</h2>
-                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="hvor" />
+                    <h2>Sted&nbsp; </h2>
+                    <div id="hvorTxtId">Vestfold</div>
+                    <input style="width: 200px;" oninput="updateHvor(hvorId.value)" id="hvorId" type="range" min="1" max="3" value="2" name="hvor" />
                 </div>
 
                 <div class="row">
@@ -161,6 +162,23 @@
          function updateValues(number){
              document.getElementById("nedslagsfelt").innerHTML = Math.round(36456 * number / 100);
          }
+
+         function updateHvor(num){
+             var sted = "";
+             if(num === "1"){
+                 sted = "Tønsberg";
+             }
+             if(num === "2"){
+                 sted = "Vestfold";
+             }
+             if(num === "3"){
+                 sted = "Hele Norge";
+             }
+
+             console.log(num)
+             document.getElementById("hvorTxtId").innerHTML = sted;
+         }
+
 
          function changeFormat(format) {
              var myClasses = document.querySelectorAll('.printformater'),
