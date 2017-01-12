@@ -118,7 +118,11 @@
         input[type=range]:focus::-ms-fill-upper {
           background: #2497E3;
         }
-    </style>
+        div.calendar {
+     		background-image: url("images/Blank-kalender.svg");
+     		background-repeat: no-repeat;
+    		background-position: right top;
+         </style>
 
     </head>
 
@@ -209,7 +213,9 @@
 
                 <div class="row" style="margin-top:20px">
                 	<div class="col-lg-3">
-                		<output name="daysOutputText" id="daysOutputId" style="font-size: 32px;"><div style="margin-left: 40px;margin-top:10px;" >3</div></output>
+                		<div class="calendar">
+                			<output name="daysOutputText" id="daysOutputId" style="font-size: 32px;margin-left: 35px;margin-top:10px;">3</output>
+                		</div>
                 	</div>
                 	<div class="col-lg-9">
                 	    <h2>Dager</h2>
