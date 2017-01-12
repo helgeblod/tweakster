@@ -9,10 +9,12 @@
         <meta name="author" content="">
         <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-        <title>Justified Nav Template for Bootstrap</title>
+        <title>Adsistent</title>
 
         <!-- Bootstrap core CSS -->
         <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/odometer-theme-default.css" type="text/css">
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -29,14 +31,15 @@
         <![endif]-->
     </head>
 
-    <body>
+    <body style="font-family:source sans pro">
         <img width="100%" src="images/tb_topp.png">
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div>
-                        Hvor?&nbsp;<input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="hvor" />
+                        <h2>Hvor?&nbsp;</h2>
+                        <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="3" name="hvor" />
                     </div>
                 </div>
             </div>
@@ -74,7 +77,20 @@
             <div class="col-lg-4">
                 <div class="row">
                     <h2>Avisformat</h2>
-                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="slider" type="range" min="1" max="4" name="avisformat" />
+                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" name="avisformat" />
+
+                        <div class="printformater" id="p1" margin-right="5px" style="display:none">
+                            <img width="15%"  src="images/Printformater/liten.svg">
+                        </div>
+                        <div class="printformater" id="p2" margin-right="5px" style="display:none">
+                            <img width="15%" margin-right="4px" src="images/Printformater/middels.svg">
+                        </div>
+                        <div class="printformater" id="p3" margin-right="5px">
+                            <img width="15%" margin-right="4px" src="images/Printformater/stor.svg">
+                        </div>
+                        <div class="printformater" id="p4" >
+                            <img width="15%" margin-right="4px" src="images/Printformater/størst.svg">
+                        </div>
                 </div>
 
                 <div class="row">
@@ -86,8 +102,23 @@
                 </div>
 
 
+
                 <div class="row">
+
                     <h2>Størrelse digitalt</h2>
+
+                      <div class="digitalformater" id="d1" margin-right="5px">
+                            <img width="15%"  src="images/Digitalformater/liten.svg">
+                        </div>
+                        <div class="digitalformater" id="d2" margin-right="5px">
+                            <img width="15%" margin-right="4px" src="images/Digitalformater/middels.svg">
+                        </div>
+                        <div class="digitalformater" id="d3" margin-right="5px">
+                            <img width="15%" margin-right="4px" src="images/Digitalformater/stor.svg">
+                        </div>
+                        <div class="digitalformater" id="d4" >
+                            <img width="15%" margin-right="4px" src="images/Digitalformater/størst.svg">
+                        </div>
                 </div>
 
                 <div class="row">
@@ -129,5 +160,26 @@
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+        <script type="text/javascript" src="js/odometer.min.js"></script>
+        <script>
+         function updateValues(number){
+             document.getElementById("nedslagsfelt").innerHTML = Math.round(36456 * number / 100);
+         }
+
+         function changeFormat(format) {
+             var myClasses = document.querySelectorAll('.printformater'),
+                 i = 0,
+                 l = myClasses.length;
+
+             for (i; i < l; i++) {
+                 myClasses[i].style.display = 'none';
+             }
+             console.log("p"+format)
+             document.getElementById("p"+format).style = ""
+         }
+        </script>
+
     </body>
 </html>
