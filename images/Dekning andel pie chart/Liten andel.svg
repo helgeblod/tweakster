@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.99997 62.73555">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #999;
+        stroke: #333;
+        opacity: 0.8;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #b61921;
+        stroke: #000;
+      }
+    </style>
+  </defs>
+  <title>Liten andel</title>
+  <path class="cls-1" d="M51.7,54.63555a30.89426,30.89426,0,1,1-22.5-54.1v31.7Z"/>
+  <path class="cls-2" d="M62.5,31.53554a30.679,30.679,0,0,1-7.7,20.4l-21.3-21.3v-30A31.12054,31.12054,0,0,1,62.5,31.53554Z"/>
+</svg>

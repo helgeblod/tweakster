@@ -1,0 +1,30 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.75208 62.8772">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b61921;
+        stroke: #000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #999;
+        stroke: #333;
+        opacity: 0.8;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #f7f5f5;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>Stor andel</title>
+  <path class="cls-1" d="M33.485,32.33541L33.35822,0.65729A30.89426,30.89426,0,1,1,11.23058,54.91063L33.556,32.40582Z"/>
+  <path class="cls-2" d="M9.42287,9.592A30.679,30.679,0,0,1,29.25648.53227L29.377,30.65476,8.24889,51.95269A31.11629,31.11629,0,0,1,9.42287,9.592Z"/>
+  <path class="cls-3" d="M7.20549,56.27025"/>
+</svg>
