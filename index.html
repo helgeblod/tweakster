@@ -24,6 +24,8 @@
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -127,15 +129,15 @@
     </head>
 
     <body style="font-family:source sans pro">
-        <img width="100%" src="images/tb_topp.png">
+        <img width="100%" src="images/tb_topp.png" style="margin-bottom:30px">
 
         <div class="container">
             <div class="col-lg-4">
 
                 <div class="row">
                     <h2>Sted&nbsp; </h2>
-                    <div id="hvorTxtId">Vestfold</div>
-                    <input style="width: 200px;" oninput="updateHvor(hvorId.value)" id="hvorId" type="range" min="1" max="3" value="2" name="hvor" />
+                    <div id="hvorTxtId">Tønsberg</div>
+                    <input style="width: 200px;" oninput="updateHvor(hvorId.value)" id="hvorId" type="range" min="1" max="3" value="0" name="hvor" />
                 </div>
 
                 <div class="row">
@@ -153,16 +155,16 @@
 
                 <div class="row">
                     <h2>Kjønn</h2>
-                    <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="kjonnId" type="range" min="0" max="6" value="3" name="kjonn" />
+                    Kvinner <input style="width: 200px;" oninput="updateHvor(hvor.value)" id="kjonnId" type="range" min="0" max="6" value="3" name="kjonn" />Menn
                 </div>
 
                 <div class="row">
                     <h2>Interesser</h2>
-                    <button type="button" class="btn btn-sm btn-primary">Sport</button>
-                    <button type="button" class="btn btn-sm btn-primary">Politikk</button>
-                    <button type="button" class="btn btn-sm btn-primary">Musikk/Film</button>
-                    <button type="button" class="btn btn-sm btn-primary">Mote</button>
-                    <button type="button" class="btn btn-sm btn-primary">IT</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Sport</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Politikk</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Musikk/Film</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">Mote</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="$(this).toggleClass('btn-primary')">IT</button>
                 </div>
             </div>
 
@@ -187,7 +189,7 @@
 	                	<div class="col-lg-9">
 	                    <h2>Avisformat</h2>
 	                    <input style="width: 200px;" oninput="changeFormat(avisformatId.value);" id="avisformatId" type="range" min="1" max="4" value="3" name="avisformat" />
-                	</div>            
+                	</div>
                 </div>
 
                 <div class="row" style="margin-top:15px">
@@ -224,7 +226,7 @@
 
                     </div>
                 	</div>
-                		
+
 
                 </div>
 
@@ -243,21 +245,47 @@
                 </div>
             </div>
 
-            <div class="col-lg-4" style="background-color: #eceeef;">
-                <div class="row">
+            <div class="col-lg-4 panel" style="">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h2 class="panel-title text-center">
+                        Din kampanje
+                    </h2>
+                  </div>
+                  <div class="panel-body" style="background-color: #fcfcfc">
                     <h2>Du treffer</h2>
-                </div>
+                    <img src="images/du_treffer/1.svg" style="width: auto;height: 30px;">
+                    <div id="nedslagsfelt" class="odometer">153456</div>
+                    <div id="nedslagsfeltValue" style="display:none">153456</div>
+                    lesere
 
-                <div class="row">
-                    <h2>67% av alle </h2>
-                </div>
 
-                <div class="row">
+                    <div><span id="percentageId">67</span>% av alle i <span id="hvorTxtKvitteringId">Tønsberg</span></div>
                     <h2>Kjønnsfordeling</h2>
-                </div>
 
-                <div class="row">
                     <h2>Aldersfordeling</h2>
+                    <h2>Pris:</h2>
+                    <div class="price">
+                    <h3 class="text-right" style="margin-top:-40px;font-weight: 700">18500 Totalt</h3>
+                    <table class="table text-center">
+                      <tr>
+                        <td>
+                          <div class="perViewer" style="font-weight: 700">1,50</div><div>per leser</div>
+                        </td>
+                        <td>
+                          <div class="viewersPaper" style="font-weight: 700">20000</div><div>lesere papir</div>
+                        </td>
+                        <td>
+                          <div class="viewersDigital" style="font-weight: 700">7500</div><div>lesere digitalt</div>
+                        </td>
+                      </tr>
+                    </table>  
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <button type="button" class="btn btn-primary btn-block">Hjelp meg</button>
+                  <button type="button" class="btn btn-success btn-block">Gå videre</button>
                 </div>
             </div>
 
@@ -272,24 +300,32 @@
 
         <script type="text/javascript" src="js/odometer.min.js"></script>
         <script>
-         function updateValues(number){
-             document.getElementById("nedslagsfelt").innerHTML = Math.round(36456 * number / 100);
+
+         function updateValues(value){
+             document.getElementById("nedslagsfeltValue").innerHTML = Math.round(value );
+             document.getElementById("nedslagsfelt").innerHTML = Math.round(value);
          }
 
          function updateHvor(num){
+
              var sted = "";
              if(num === "1"){
                  sted = "Tønsberg";
+                 document.getElementById("percentageId").innerHTML = "53";
              }
              if(num === "2"){
                  sted = "Vestfold";
+                 document.getElementById("percentageId").innerHTML = "67";
+
              }
              if(num === "3"){
+                 document.getElementById("percentageId").innerHTML = "73";
                  sted = "Hele Norge";
              }
 
-             console.log(num)
+             updateValues( num * 153456 )
              document.getElementById("hvorTxtId").innerHTML = sted;
+             document.getElementById("hvorTxtKvitteringId").innerHTML = sted;
          }
 
 
@@ -301,7 +337,7 @@
              for (i; i < l; i++) {
                  myClasses[i].style.display = 'none';
              }
-             console.log("p"+format)
+
              document.getElementById("p"+format).style = ""
          }
 
@@ -315,7 +351,6 @@
              }
              document.getElementById("d"+format).style = ""
          }
-
 
         </script>
 
